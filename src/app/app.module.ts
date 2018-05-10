@@ -15,12 +15,13 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AppComponent,
     PagesListComponent,
     LoginPageComponent,
-    AppRoutingModule
+   
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
