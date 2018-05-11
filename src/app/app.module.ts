@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-
-
+import {AfService} from './providers/af.service';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +21,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
