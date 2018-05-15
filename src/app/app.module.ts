@@ -10,11 +10,13 @@ import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {AfService} from './providers/af.service';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFirestore, AngularFirestoreModule} from 'angularfire2/firestore';
 @NgModule({
   declarations: [
     AppComponent,
     PagesListComponent,
     LoginPageComponent,
+    
    
   ],
   imports: [
@@ -22,7 +24,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AppRoutingModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
+
   ],
   providers: [AfService],
   bootstrap: [AppComponent]
