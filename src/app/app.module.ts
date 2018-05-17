@@ -35,7 +35,8 @@ import {MaterialModule} from './material.module';
     AngularFireDatabaseModule,
     AppRoutingModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MaterialModule
 
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
