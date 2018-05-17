@@ -16,7 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import {AdminGuard} from './guards/admin.guard';
 import {SubscriberGuard} from './guards/subscriber.guard';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule,MatToolbarModule,MatIconModule} from '@angular/material';
 import {MaterialModule} from './material.module';
 @NgModule({
   declarations: [
@@ -36,7 +36,10 @@ import {MaterialModule} from './material.module';
     AppRoutingModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    MaterialModule
+    MaterialModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule
 
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
