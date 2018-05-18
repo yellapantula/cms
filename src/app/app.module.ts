@@ -13,7 +13,6 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestore, AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
 import {AdminGuard} from './guards/admin.guard';
 import {SubscriberGuard} from './guards/subscriber.guard';
 import {MatButtonModule,MatToolbarModule,MatIconModule} from '@angular/material';
@@ -25,12 +24,13 @@ import {MaterialModule} from './material.module';
     LoginPageComponent,
     AppNavbarComponent,
     HomePageComponent,
-    AdminPageComponent,
+    
     
    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AppRoutingModule,
