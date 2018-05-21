@@ -5,6 +5,8 @@ import {AdminRoutingModule} from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AdminPageComponent} from './admin-page.component';
 import {AppNavbarComponent} from './app-navbar/app-navbar.component';
+import { MenusComponent } from './menus/menus.component';
+import { PostsComponent } from './posts/posts.component';
 
 
 
@@ -15,6 +17,6 @@ import {AppNavbarComponent} from './app-navbar/app-navbar.component';
     AdminRoutingModule,
     
     ],
-   declarations: [DashboardComponent,AdminPageComponent, AppNavbarComponent]
+   declarations: [DashboardComponent,AdminPageComponent, AppNavbarComponent, MenusComponent, PostsComponent]
 })
 export class AdminPageModule { }
