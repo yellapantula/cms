@@ -18,7 +18,7 @@ export class MenusService {
         const data = a.payload.doc.data() as Menu;
 
         const id= a.payload.doc.id;
-        return {id,data};
+        return {id,...data};
       })
     });
 
