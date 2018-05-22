@@ -12,7 +12,15 @@ export class MenusService {
 
   constructor(private afs: AngularFirestore) { }
   getMenus(){
-    return this.afs.collection('menus').valueChanges();
+    return this.afs.collection('menus').snapshotChanges()
+    .map(menu => {
+      return menu.map (a =>{
+        const data = a.payload.doc.data() as Menu;
+
+        const id= a.payload.doc.id;
+        return {id,data};
+      })
+    });
 
   }
   addMenu(menu:Menu){
