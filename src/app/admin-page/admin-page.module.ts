@@ -8,6 +8,8 @@ import {AppNavbarComponent} from './app-navbar/app-navbar.component';
 import { MenusComponent } from './menus/menus.component';
 import { PostsComponent } from './posts/posts.component';
 import {FormsModule} from '@angular/forms';
+import { ConfirmationDialogueComponent } from './shared/confirmation-dialogue/confirmation-dialogue.component';
+import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
 
 @NgModule({
     imports: [
@@ -17,6 +19,8 @@ import {FormsModule} from '@angular/forms';
     FormsModule
     
     ],
-   declarations: [DashboardComponent,AdminPageComponent, AppNavbarComponent, MenusComponent, PostsComponent]
+   declarations: [DashboardComponent,AdminPageComponent, AppNavbarComponent, MenusComponent, PostsComponent, 
+    ConfirmationDialogueComponent, EditMenuComponent],
+    entryComponents: [ConfirmationDialogueComponent, EditMenuComponent]
 })
 export class AdminPageModule { }
