@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild, OnInit } from '@angular/core';
 import {MenusService, Menu} from '../../service/menus/menus.service';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource, MatSort, MatPaginator} from '@angular/material';
 
 @Component({
   selector: 'app-menus',
@@ -8,6 +8,8 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./menus.component.css']
 })
 export class MenusComponent implements OnInit {
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator:MatPaginator;
   
   menuDetails:Menu ={
     title:"",
@@ -20,11 +22,19 @@ export class MenusComponent implements OnInit {
   ngOnInit() {
     this.menus.getMenus().subscribe( (data: any ) => {
       this.dataSource.data=data;
-    
-
     })
   }
+  ngAfterViewInit(){
+    this.dataSource.sort=this.sort;
+    this.dataSource.paginator=this.paginator;
+  }
+  
   addMenu(){
     this.menus.addMenu(this.menuDetails);
+  }
+  applyFilter(filterValue: string){
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLocaleLowerCase();
+    this.dataSource.filter= filterValue;
   }
 }

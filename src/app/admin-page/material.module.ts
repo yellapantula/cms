@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatToolbarModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatToolbarModule, MatInputModule,MatSortModule, MatPaginatorModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -16,13 +16,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ],
     imports: [
         MatButtonModule, MatToolbarModule, MatMenuModule, MatIconModule,MatSidenavModule,MatListModule,MatInputModule,
-        MatTableModule,MatFormFieldModule
+        MatTableModule,MatFormFieldModule, MatSortModule, MatPaginatorModule
 
   
     ],
     exports: [
         MatButtonModule, MatToolbarModule,MatMenuModule, MatIconModule,MatSidenavModule,MatListModule,
-        MatInputModule,MatTableModule,MatFormFieldModule
+        MatInputModule,MatTableModule,MatFormFieldModule, MatSortModule, MatPaginatorModule
     ]
 
   })
