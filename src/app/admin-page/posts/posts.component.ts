@@ -5,6 +5,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {ConfirmationDialogueComponent} from '../shared/confirmation-dialogue/confirmation-dialogue.component';
 import {EditPostComponent} from './edit-post/edit-post.component';
 import {MenusService} from '../../service/menus/menus.service';
+import {FormControl,FormGroup,Validators, FormBuilder} from '@angular/forms';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -20,10 +21,17 @@ export class PostsComponent implements OnInit {
     content:""
   }
   menusList:any;
+  postForm:FormGroup;
   dataSource= new MatTableDataSource();
   displayedColumns=["id","title","menu_id","content","actions"];
 
-  constructor(private posts:PostsService,private menus:MenusService, public dialog: MatDialog) { }
+  constructor(private posts:PostsService,private menus:MenusService, public dialog: MatDialog, private fb:FormBuilder) { 
+    this.postForm = this.fb.group({
+      title: ['', Validators.required ],
+      menu_id:['', Validators.required ],
+      content:['', Validators.required ]
+    });
+  }
 
   ngOnInit() {
     this.posts.getPosts().subscribe( (data: any ) => {
@@ -40,7 +48,7 @@ export class PostsComponent implements OnInit {
   }
   
   addPost(){
-    this.posts.addPost(this.postDetails);
+    this.posts.addPost(this.postForm.value);
   }
   applyFilter(filterValue: string){
     filterValue = filterValue.trim();

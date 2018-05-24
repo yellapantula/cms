@@ -1,18 +1,22 @@
 <div>
-    <mat-form-field>
-        <input matInput  placeholder="Title" [(ngModel)]="postDetails.title">
-    </mat-form-field>
-    <mat-form-field>    
-      <mat-select placeholder="Select Menu" [(ngModel)]="postDetails.menu_id" ngDefaultControl>
-          <mat-option *ngFor="let menu of menusList" [value]="menu.id">
-            {{ menu.title }}
-          </mat-option>
-        </mat-select>
-    </mat-form-field>
+  <form [formGroup]="postForm">
       <mat-form-field>
-          <textarea  matInput  placeholder="Content" [(ngModel)]="postDetails.content"></textarea>
+          <input matInput  placeholder="Title" formControlName="title">
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="addPost()"> Add </button>
+      <mat-form-field>    
+        <mat-select placeholder="Select Menu" formControlName="menu_id" ngDefaultControl>
+            <mat-option *ngFor="let menu of menusList" [value]="menu.id">
+              {{ menu.title }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+        <mat-form-field>
+            <textarea  matInput  placeholder="Content" formControlName="content"></textarea>
+        </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addPost()" [disabled]="!postForm.valid">Add </button>
+    </form>
+
+    
   </div>
   
   
