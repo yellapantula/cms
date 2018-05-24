@@ -22,6 +22,6 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     ],
    declarations: [DashboardComponent,AdminPageComponent, AppNavbarComponent, MenusComponent, PostsComponent, 
     ConfirmationDialogueComponent, EditMenuComponent, EditPostComponent],
-    entryComponents: [ConfirmationDialogueComponent, EditMenuComponent]
+    entryComponents: [ConfirmationDialogueComponent, EditMenuComponent, EditPostComponent]
 })
 export class AdminPageModule { }

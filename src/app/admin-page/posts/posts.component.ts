@@ -75,7 +75,7 @@ export class PostsComponent implements OnInit {
   openEditDialog(postId: string, title:string, menu_id: string, content:string): void {
     let dialogRef = this.dialog.open(EditPostComponent, {
       width: '250px',
-      data: { title,  menus_id, content, "menus":this.menusList }
+      data: { title,  menu_id, content, "menus":this.menusList }
       
     });
 

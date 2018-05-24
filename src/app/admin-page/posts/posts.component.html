@@ -4,7 +4,7 @@
     </mat-form-field>
     <mat-form-field>    
       <mat-select placeholder="Select Menu" [(ngModel)]="postDetails.menu_id" ngDefaultControl>
-          <mat-option *ngFor="let menu of menusList" [value]="menu.title">
+          <mat-option *ngFor="let menu of menusList" [value]="menu.id">
             {{ menu.title }}
           </mat-option>
         </mat-select>
@@ -53,7 +53,7 @@
       <ng-container matColumnDef="actions">
           <mat-header-cell *matHeaderCellDef mat-sort-header>  </mat-header-cell>   
           <mat-cell *matCellDef="let element">     
-            <button mat-icon-button color="primary" (click)= "openEditDialog(element.id,element.title,element.url)">
+            <button mat-icon-button color="primary" (click)= "openEditDialog(element.id,element.title,element.menu_id,element.content,element.url)">
                 <mat-icon aria-label="edit">mode_edit</mat-icon>
             </button>
             <button mat-icon-button color="warn" (click)= "openDialog(element.id)">
