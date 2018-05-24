@@ -10,6 +10,7 @@ import { PostsComponent } from './posts/posts.component';
 import {FormsModule} from '@angular/forms';
 import { ConfirmationDialogueComponent } from './shared/confirmation-dialogue/confirmation-dialogue.component';
 import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,7 @@ import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
     
     ],
    declarations: [DashboardComponent,AdminPageComponent, AppNavbarComponent, MenusComponent, PostsComponent, 
-    ConfirmationDialogueComponent, EditMenuComponent],
+    ConfirmationDialogueComponent, EditMenuComponent, EditPostComponent],
     entryComponents: [ConfirmationDialogueComponent, EditMenuComponent]
 })
 export class AdminPageModule { }

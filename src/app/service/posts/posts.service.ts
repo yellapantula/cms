@@ -3,7 +3,8 @@ import {AngularFirestore} from 'angularfire2/firestore';
 
 export interface Post{
   title: "",
-  url : ""
+  menu_id : "",
+  content:""
 
 }
 
@@ -23,14 +24,14 @@ export class PostsService {
     });
 
   }
-  addMenu(post:Post){
+  addPost(post:Post){
     this.afs.collection("posts").add(post);
 
   }
-  deleteMenu(postId){
+  deletePost(postId){
     this.afs.doc('posts/'+postId).delete();
   }
-  updateMenu(postId, post:Post){
+  updatePost(postId, post:Post){
     this.afs.doc('posts/'+postId).update(post);
   }
 }

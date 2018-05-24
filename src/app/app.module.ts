@@ -18,6 +18,7 @@ import {SubscriberGuard} from './guards/subscriber.guard';
 import {MatButtonModule,MatToolbarModule,MatIconModule} from '@angular/material';
 import {MaterialModule} from './material.module';
 import {MenusService} from './service/menus/menus.service';
+import {PostsService} from './service/posts/posts.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,7 @@ import {MenusService} from './service/menus/menus.service';
     MatIconModule
 
   ],
-  providers: [AfService, AdminGuard, SubscriberGuard,MenusService],
+  providers: [AfService, AdminGuard, SubscriberGuard,MenusService,PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
