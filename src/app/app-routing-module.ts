@@ -8,10 +8,10 @@ import {SubscriberGuard} from './guards/subscriber.guard';
 import {FrontPageComponent} from './front-page/front-page.component';
 
 const routes: Routes=[
-    {path: '', loadChildren:'app/front-page/front-page.module#FrontPageModule'  },
+    {path: 'home', loadChildren:'app/front-page/front-page.module#FrontPageModule'  },
     {path: 'login', component:LoginPageComponent},
     {path: 'admin', loadChildren:'app/admin-page/admin-page.module#AdminPageModule', canActivate:[AdminGuard]},
-    
+    {path:'**', redirectTo:'home'}
     
 ]
 
