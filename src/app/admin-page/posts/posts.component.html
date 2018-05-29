@@ -50,7 +50,7 @@
             <!-- Weight Column -->
       <ng-container matColumnDef="content">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Content </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.content}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{(element.content | slice:0:30)+'...'}} </mat-cell>
       </ng-container>
 
       <!-- Weight Column -->

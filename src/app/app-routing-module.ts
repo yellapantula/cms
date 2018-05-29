@@ -11,7 +11,7 @@ const routes: Routes=[
     {path: 'home', loadChildren:'app/front-page/front-page.module#FrontPageModule'  },
     {path: 'login', component:LoginPageComponent},
     {path: 'admin', loadChildren:'app/admin-page/admin-page.module#AdminPageModule', canActivate:[AdminGuard]},
-    {path:'**', redirectTo:'home'}
+    {path:'**', redirectTo:'home/pages/angularjs'}
     
 ]
 

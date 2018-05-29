@@ -4,6 +4,7 @@ import {MatTableDataSource, MatSort, MatPaginator} from '@angular/material';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {ConfirmationDialogueComponent} from '../shared/confirmation-dialogue/confirmation-dialogue.component';
 import {EditMenuComponent} from './edit-menu/edit-menu.component';
+import {ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'app-menus',
   templateUrl: './menus.component.html',
@@ -20,7 +21,7 @@ export class MenusComponent implements OnInit {
   dataSource= new MatTableDataSource();
   displayedColumns=["id","title","url","actions"];
 
-  constructor(private menus:MenusService, public dialog: MatDialog) { }
+  constructor(private menus:MenusService, public dialog: MatDialog, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.menus.getMenus().subscribe( (data: any ) => {
@@ -34,6 +35,7 @@ export class MenusComponent implements OnInit {
   
   addMenu(){
     this.menus.addMenu(this.menuDetails);
+    this.toastr.success('Added Successfully', 'Menu');
   }
   applyFilter(filterValue: string){
     filterValue = filterValue.trim();

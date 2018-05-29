@@ -15,6 +15,7 @@ import {SubscriberGuard} from './guards/subscriber.guard';
 import {MaterialModule} from './material.module';
 import {MenusService} from './service/menus/menus.service';
 import {PostsService} from './service/posts/posts.service';
+import {ToastrModule} from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import {PostsService} from './service/posts/posts.service';
     AngularFireAuthModule,
     AngularFirestoreModule,
     MaterialModule,
+    ToastrModule.forRoot()
 
 
   ],
