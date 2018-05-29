@@ -12,7 +12,6 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestore, AngularFirestoreModule} from 'angularfire2/firestore';
 import {AdminGuard} from './guards/admin.guard';
 import {SubscriberGuard} from './guards/subscriber.guard';
-import {MatButtonModule,MatToolbarModule,MatIconModule} from '@angular/material';
 import {MaterialModule} from './material.module';
 import {MenusService} from './service/menus/menus.service';
 import {PostsService} from './service/posts/posts.service';
@@ -20,8 +19,6 @@ import {PostsService} from './service/posts/posts.service';
   declarations: [
     AppComponent,
     LoginPageComponent,
-  
-    
     
     
    
@@ -35,9 +32,7 @@ import {PostsService} from './service/posts/posts.service';
     AngularFireAuthModule,
     AngularFirestoreModule,
     MaterialModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule
+
 
   ],
   providers: [AfService, AdminGuard, SubscriberGuard,MenusService,PostsService],
