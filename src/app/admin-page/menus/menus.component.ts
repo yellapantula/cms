@@ -47,6 +47,7 @@ export class MenusComponent implements OnInit {
   }
   deleteMenu(menuId){
     this.menus.deleteMenu(menuId);
+    this.toastr.success('Deleted Successfully', 'Menu');
   }
 
   openDialog(menuId): void {
